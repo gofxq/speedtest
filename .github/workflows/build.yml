@@ -1,0 +1,70 @@
+name: Build Go Application
+
+on:
+  push:
+    branches:
+      - release  # 或其他您希望触发构建的分支
+    tags:
+        - 'v*'  # 可选：在推送标签时触发
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: [1.18]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        arch: [amd64, arm64]
+        include:
+          - os: ubuntu-latest
+            arch: amd64
+            goos: linux
+            goarch: amd64
+          - os: macos-latest
+            arch: amd64
+            goos: darwin
+            goarch: amd64
+          - os: windows-latest
+            arch: amd64
+            goos: windows
+            goarch: amd64
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Set up Go environment
+        run: |
+          echo "GOOS=${{ matrix.goos }}" >> $GITHUB_ENV
+          echo "GOARCH=${{ matrix.goarch }}" >> $GITHUB_ENV
+
+      - name: Cache Go modules
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Download Go modules
+        run: go mod download
+
+      - name: Build
+        run: |
+          if [ "${{ matrix.goos }}" == "windows" ]; then
+            go build -o ${{ github.workspace }}/speedtest-${{ matrix.goos }}-${{ matrix.goarch }}.exe
+          else
+            go build -o ${{ github.workspace }}/speedtest-${{ matrix.goos }}-${{ matrix.goarch }}
+          fi
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: speedtest-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: ${{ github.workspace }}/speedtest-${{ matrix.goos }}-${{ matrix.goarch }}
