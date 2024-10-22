@@ -13,23 +13,35 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go-version: [1.18]
+        go-version: [1.23]
         os: [ubuntu-latest, macos-latest, windows-latest]
         arch: [amd64, arm64]
         include:
-          - os: ubuntu-latest
-            arch: amd64
-            goos: linux
-            goarch: amd64
-          - os: macos-latest
-            arch: amd64
-            goos: darwin
-            goarch: amd64
-          - os: windows-latest
-            arch: amd64
-            goos: windows
-            goarch: amd64
-
+            - os: ubuntu-latest
+              arch: amd64
+              goos: linux
+              goarch: amd64
+            - os: ubuntu-latest
+              arch: arm64
+              goos: linux
+              goarch: arm64
+            - os: macos-latest
+              arch: amd64
+              goos: darwin
+              goarch: amd64
+            - os: macos-latest
+              arch: arm64
+              goos: darwin
+              goarch: arm64
+            - os: windows-latest
+              arch: amd64
+              goos: windows
+              goarch: amd64
+            - os: windows-latest
+              arch: arm64
+              goos: windows
+              goarch: arm64
+              
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
