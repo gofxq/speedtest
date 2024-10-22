@@ -12,8 +12,8 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/umahmood/haversine"
 
-	"github.com/librespeed/speedtest/config"
-	"github.com/librespeed/speedtest/results"
+	"github.com/gofxq/speedtest/config"
+	"github.com/gofxq/speedtest/results"
 )
 
 var (

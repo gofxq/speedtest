@@ -1,4 +1,4 @@
-![LibreSpeed Logo](https://github.com/librespeed/speedtest-go/blob/master/.logo/logo3.png?raw=true)
+![LibreSpeed Logo](https://github.com/gofxq/speedtest-go/blob/master/.logo/logo3.png?raw=true)
 
 # LibreSpeed
 
@@ -36,7 +36,7 @@ Works with mobile versions too.
 
 ### Install using prebuilt binaries
 
-1. Download the appropriate binary file from the [releases](https://github.com/librespeed/speedtest-go/releases/) page.
+1. Download the appropriate binary file from the [releases](https://github.com/gofxq/speedtest-go/releases/) page.
 2. Unzip the archive.
 3. Make changes to the configuration.
 4. Run the binary.
@@ -62,7 +62,7 @@ manually, you can install newer version of Go into your `GOPATH`:
 1. Clone this repository:
 
     ```
-    $ git clone github.com/librespeed/speedtest-go
+    $ git clone github.com/gofxq/speedtest-go
     ```
 
 2. Build

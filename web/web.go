@@ -20,8 +20,8 @@ import (
 	"github.com/pires/go-proxyproto"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/librespeed/speedtest/config"
-	"github.com/librespeed/speedtest/results"
+	"github.com/gofxq/speedtest/config"
+	"github.com/gofxq/speedtest/results"
 )
 
 const (

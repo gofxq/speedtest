@@ -4,10 +4,10 @@ import (
 	"flag"
 	_ "time/tzdata"
 
-	"github.com/librespeed/speedtest/config"
-	"github.com/librespeed/speedtest/database"
-	"github.com/librespeed/speedtest/results"
-	"github.com/librespeed/speedtest/web"
+	"github.com/gofxq/speedtest/config"
+	"github.com/gofxq/speedtest/database"
+	"github.com/gofxq/speedtest/results"
+	"github.com/gofxq/speedtest/web"
 
 	_ "github.com/breml/rootcerts"
 	log "github.com/sirupsen/logrus"

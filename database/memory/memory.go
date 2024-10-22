@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/librespeed/speedtest/database/schema"
+	"github.com/gofxq/speedtest/database/schema"
 )
 
 const (

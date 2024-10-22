@@ -15,9 +15,9 @@ import (
 	"time"
 
 	"github.com/go-chi/render"
-	"github.com/librespeed/speedtest/config"
-	"github.com/librespeed/speedtest/database"
-	"github.com/librespeed/speedtest/database/schema"
+	"github.com/gofxq/speedtest/config"
+	"github.com/gofxq/speedtest/database"
+	"github.com/gofxq/speedtest/database/schema"
 
 	"github.com/golang/freetype"
 	"github.com/golang/freetype/truetype"

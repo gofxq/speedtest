@@ -1,7 +1,7 @@
 /*
 	LibreSpeed - Worker
 	by Federico Dossena
-	https://github.com/librespeed/speedtest/
+	https://github.com/gofxq/speedtest/
 	GNU LGPLv3 License
 */
 
