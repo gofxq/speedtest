@@ -64,7 +64,7 @@ jobs:
           fi
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: speedtest-${{ matrix.goos }}-${{ matrix.goarch }}
           path: ${{ github.workspace }}/speedtest-${{ matrix.goos }}-${{ matrix.goarch }}

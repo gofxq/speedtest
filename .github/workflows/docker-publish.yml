@@ -3,7 +3,7 @@ name: Publish Docker image to GitHub Packages
 on:
   push:
     branches:
-      - master  # 或者您想要触发构建的任何分支
+      - release  # 或者您想要触发构建的任何分支
     tags:
       - 'v*'  # 可选：在推送标签时触发
 
